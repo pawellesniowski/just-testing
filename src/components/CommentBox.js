@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import requireAuthHOC from 'components/requireAuth.hoc.js'
 
 // adds redux:
 import { connect } from 'react-redux';
@@ -8,8 +9,7 @@ class CommentBox extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            comment: '',
-            commentsss: []
+            comment: ''
         };
     }
 
@@ -49,16 +49,4 @@ class CommentBox extends Component {
     }
 }
 
-
-
-
-// const mapDispatchToProp = (dispatch) => {
-//     return {
-//         addCommentswarr: (comment) => {
-//             dispatch(actions.SaveComment(comment));
-//         }
-//     }
-// }
-
-
-export default connect(null, actions)(CommentBox)
+export default connect(null, actions)(requireAuthHOC(CommentBox));
