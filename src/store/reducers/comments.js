@@ -14,12 +14,3 @@ export function commentsReducer (state = initialState, action) {
             return state;
     }
 }
-
-// export function fetchedCommentsReducer (state = initialState, action) {
-//     switch(action.type) {
-//         case FETCH_COMMENTS: 
-//             return [...state, action.payload];
-//         default:
-//             return state;
-//     }
-// }

@@ -13,22 +13,23 @@ class CommentList extends Component {
     }
 
     render() {
-        console.log(this.props)
         return (
-            <ul>
-                {this.renderComments()}
-            </ul>
+            <div>
+                <h4>Comment List</h4>
+                <ul>
+                    {this.renderComments()}
+                </ul>
+            </div>
         );
     }
 }
 
 const mapStateToProps = state => {
     return {
-        comments: state.comments,
-        fetchedComments: state.fetchedComments
+        comments: state.comments
     }
 }
 
 export default connect(
     mapStateToProps, null
-)(CommentList)
+)(CommentList);
