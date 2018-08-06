@@ -4,6 +4,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import reducers from 'store/reducers';
 import reduxPromise from 'redux-promise';
 import async from 'middlewares/async';
+import stateValidator from 'middlewares/stateValidator';
 
 export default ({children, initialState = {}}) => {
 
@@ -13,12 +14,12 @@ export default ({children, initialState = {}}) => {
         reducers, 
         initialState, 
         composeEnhancers(
-        applyMiddleware(async)
+        applyMiddleware(async, stateValidator)
     ));
 
     return (
         <Provider store={store}>
             {children}
         </Provider>
-    )
+    );
 }
