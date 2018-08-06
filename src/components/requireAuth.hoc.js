@@ -41,7 +41,7 @@ export default (ChildComponent) => {
             loggedIn: state.loggedIn
         }
     }
-
+    
     return connect(mapStateToProps, null)(ComposedComponent);
 }
 

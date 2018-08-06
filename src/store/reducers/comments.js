@@ -8,6 +8,7 @@ export function commentsReducer (state = initialState, action) {
         case ADD_COMMENT: 
             return [...state, action.payload];
         case FETCH_COMMENTS:
+            debugger;
             const comments = action.payload.data.map((i) => i.name);
             return [...state, ...comments];
         default:
